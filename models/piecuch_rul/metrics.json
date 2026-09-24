@@ -1,0 +1,42 @@
+{
+  "dataset": "D:\\MECHGUARD\\datasets\\Piecuch_CNC\\FeatureAndMetadata_Milling.csv",
+  "target": "CycleToFailureNormalized",
+  "task": "RUL regression",
+  "group_column": "Experiment",
+  "n_samples": 968,
+  "n_features": 123,
+  "train_samples": 757,
+  "test_samples": 211,
+  "train_groups": [
+    "P003",
+    "P004",
+    "P006",
+    "P007",
+    "P008",
+    "P010",
+    "P011",
+    "P014",
+    "P015",
+    "P017",
+    "P023",
+    "P026",
+    "P033",
+    "P038",
+    "P108",
+    "P110",
+    "P112",
+    "P114",
+    "P119"
+  ],
+  "test_groups": [
+    "P002",
+    "P012",
+    "P016",
+    "P036",
+    "P041"
+  ],
+  "selected_model": "XGBoost",
+  "mae": 0.1221554332302631,
+  "rmse": 0.14880167946757528,
+  "r2": 0.7054581959535824
+}

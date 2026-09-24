@@ -1,0 +1,210 @@
+# ============================================================
+# MECHGUARD — Root .gitignore
+# ============================================================
+
+
+# ============================================================
+# PYTHON
+# ============================================================
+
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+MANIFEST
+
+# Unit test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Type checkers
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyright/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+
+# ============================================================
+# VIRTUAL ENVIRONMENTS
+# ============================================================
+
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# datasets/.venv specifically (large C extension DLLs)
+datasets/.venv/
+
+
+# ============================================================
+# ENVIRONMENT / SECRETS
+# ============================================================
+
+.env
+.env.*
+*.env
+secrets/
+credentials/
+*.pem
+*.key
+*.p12
+*.pfx
+
+
+# ============================================================
+# IDE / EDITOR
+# ============================================================
+
+# Visual Studio
+.vs/
+
+# VS Code
+.vscode/
+
+# JetBrains
+.idea/
+*.iml
+
+# Spyder
+.spyderproject.db
+.spyproject/
+
+# Rope
+.ropeproject/
+
+
+# ============================================================
+# LOGS
+# ============================================================
+
+logs/
+*.log
+*.log.*
+log/
+
+
+# ============================================================
+# OS GENERATED
+# ============================================================
+
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+
+# ============================================================
+# TEMPORARY / GENERATED FILES
+# ============================================================
+
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp
+*.swo
+*~
+
+
+# ============================================================
+# LARGE BINARY MODEL FORMATS (not used here, but guarded)
+# ============================================================
+
+# PyTorch / ONNX (only exclude these — .joblib models are kept)
+*.pt
+*.pth
+*.onnx
+
+# Saved Keras / TF session checkpoints
+*.h5
+*.hdf5
+checkpoint/
+checkpoints/
+
+
+# ============================================================
+# DATABASES
+# ============================================================
+
+*.db
+*.sqlite
+*.sqlite3
+
+
+# ============================================================
+# NODE / FRONTEND
+# ============================================================
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+dist/
+.next/
+.nuxt/
+.output/
+
+
+# ============================================================
+# LARGE RAW DATASETS
+# ============================================================
+# Raw .mat / .zip dataset files are large binary files that
+# do not belong in the source repository.
+# Download links / instructions should be in datasets/README.md
+#
+# Paderborn bearing dataset (~8 MB per file, hundreds of files)
+datasets/Paderborn/
+#
+# CWRU bearing dataset (~7 MB per file)
+datasets/CWRU/
+#
+# NASA Milling dataset (mill.zip ~14 MB)
+datasets/NASA_Milling/
+#
+# Catch-all for any future .mat or large archive additions
+datasets/**/*.mat
+datasets/**/*.zip
+datasets/**/*.h5
+datasets/**/*.hdf5
+datasets/**/*.npy
+datasets/**/*.npz
+datasets/**/*.pkl
+datasets/**/*.csv
+
+
+# ============================================================
+# WHAT IS INTENTIONALLY KEPT
+# ============================================================
+# datasets/README.md   — Download instructions for datasets
+# models/piecuch_rul/  — Trained RUL .joblib models (≤1.24 MB)
+# backend/             — FastAPI source
+# frontend/            — Static HTML/CSS/JS dashboard
+# hardware/            — ESP8266 firmware
+# ai/                  — AI pipeline modules
+# scripts/             — Utility and simulation scripts
+# config/              — Project configuration
+# tests/               — Test suite
+# docs/                — Documentation
+# *.py (root)          — Training and inspection scripts

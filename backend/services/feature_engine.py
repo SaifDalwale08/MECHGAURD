@@ -26,12 +26,14 @@ class FeatureEngine:
         self,
         window_seconds: int = 10,
         window_size: int | None = None,
+        sample_interval_seconds: float = 1.0,
     ):
         # Backward compatibility with previous backend code.
         if window_size is not None:
             self.window_size = window_size
         else:
             self.window_size = window_seconds
+        self.sample_interval_seconds = max(float(sample_interval_seconds), 1e-6)
 
         self.temperature_window = deque(
             maxlen=self.window_size
@@ -142,7 +144,7 @@ class FeatureEngine:
         )
 
         vibration_frequency_hz = (
-            vibration_events / samples
+            vibration_events / (samples * self.sample_interval_seconds)
             if samples > 0
             else 0.0
         )
